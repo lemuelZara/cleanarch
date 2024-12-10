@@ -1,0 +1,25 @@
+type Order {
+  id: ID!
+  price: Float!
+  tax: Float!
+  finalPrice: Float!
+}
+
+type Query {
+  list: [Order!]!
+}
+
+# Create
+input CreateOrderInput {
+  id: ID!
+  price: Float!
+  tax: Float!
+}
+
+type CreateOrderOutput {
+  id: ID!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): CreateOrderOutput
+}
