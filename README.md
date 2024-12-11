@@ -5,15 +5,13 @@
 Instale a lib do evans para comunicar-se com o servidor GRPC:
 - https://github.com/ktr0731/evans?tab=readme-ov-file#installation
 
-Rode o Docker para subir os containers: `docker-compose up -d`
+Rode o comando do Dokcer para subir os todos os containers: `docker-compose up --build -d`.
 
-Rode o servidor: `go run cmd/ordersystem/main.go wire_gen.go`
+<img src="./assets/mysql.png" />
+<img src="./assets/rabbitmq.png" />
+<img src="./assets/docker.png" />
 
-> GRPC: Roda na porta 50051
->
-> Web: Roda na porta 8000
->
-> GraphQL: Roda na porta 8080
+<br>
 
 Testando o *Web Server*:
 - Use o arquivo `order.http` dentro do diretório `api`.
@@ -48,7 +46,9 @@ pb.OrderService@localhost:50051> call ListOrders
 }
 ```
 
-Testando o GraphQL Server:
+Testando o *GraphQL Server*:
+
+> http://localhost:8080/
 
 ```graphql
 mutation createOrder {
